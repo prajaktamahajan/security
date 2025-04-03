@@ -10,7 +10,7 @@ public class TestController {
 
     @GetMapping("/public")
     public String publicEndpoint() {
-        return "This is a public API. No authentication required.";
+        return "This is a public API. No authentication required here.";
     }
 
     @GetMapping("/secure")
