@@ -23,7 +23,7 @@ public class DefaultUserLogger implements CommandLineRunner {
                 .roles("USER")
                 .build();
         userDetailsService.createUser(user);
-        System.out.println("Default user created: user / test123");
+        System.out.println("Default user created here: user / test123");
     }
 }
 
