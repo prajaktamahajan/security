@@ -15,6 +15,6 @@ public class TestController {
 
     @GetMapping("/secure")
     public String secureEndpoint() {
-        return "This is a secure API. Authentication required.";
+        return "This is a secure API. Authentication required here.";
     }
 }
