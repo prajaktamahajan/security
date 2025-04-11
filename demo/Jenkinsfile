@@ -5,6 +5,11 @@ pipeline {
         maven 'maven_3.9.9'  // Match the name you gave in Jenkins
     }
     stages {
+        stage('Checkout') {
+    steps {
+        checkout scm  // Or use git url if needed
+    }
+   }
         stage('Maven Clean Build') {
             steps {
                 echo 'Building...'
