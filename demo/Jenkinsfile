@@ -8,7 +8,7 @@ pipeline {
         stage('Maven Clean Build') {
             steps {
                 echo 'Building...'
-                 bat 'mvn -f demo\\pom.xml clean installmvn clean install'
+                 bat 'mvn -f demo\\pom.xml clean install'
             }
         }
         stage('Test') {
