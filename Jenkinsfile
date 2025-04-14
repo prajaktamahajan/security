@@ -22,4 +22,9 @@ pipeline {
             }
         }
     }
+     post {
+        always {
+            junit 'demo/target/surefire-reports/*.xml'
+        }
+    }
 }
