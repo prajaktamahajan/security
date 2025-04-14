@@ -7,18 +7,24 @@ pipeline {
         stage('Maven Clean Build') {
             steps {
                 echo 'Building...'
-                 bat 'mvn clean install'
+                 bat 'mvn -f demo\\pom.xml clean install'
             }
         }
         stage('Test') {
             steps {
                 echo 'Testing...'
+                bat 'mvn -f demo\\pom.xml test'
             }
         }
         stage('Deploy') {
             steps {
                 echo 'Deploying...'
             }
+        }
+    }
+     post {
+        always {
+            junit 'demo/target/surefire-reports/*.xml'
         }
     }
 }
