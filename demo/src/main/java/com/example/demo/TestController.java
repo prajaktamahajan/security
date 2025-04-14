@@ -1,5 +1,8 @@
 package com.example.demo;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -9,12 +12,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class TestController {
 
     @GetMapping("/public")
-    public String publicEndpoint() {
-        return "This is a public API. No authentication required here.";
+    public ResponseEntity<String> publicEndpoint() {
+        return ResponseEntity.status(HttpStatus.OK).body("This is a public API. No authentication required here.");
     }
 
     @GetMapping("/secure")
-    public String secureEndpoint() {
-        return "This is a secure API. Authentication required here.";
+    public ResponseEntity<String> secureEndpoint() {
+        return ResponseEntity.status(HttpStatus.OK).body("This is a secure API. Authentication required here.");
     }
 }
