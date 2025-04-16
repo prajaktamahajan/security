@@ -27,7 +27,7 @@ class DemoApplicationTests {
     void testPublicEndpoint() throws Exception {
         mockMvc.perform(get("/api/public"))
                 .andExpect(status().isOk())
-              .andExpect(content().string("This is a public API. No authentication required here."));
+              .andExpect(content().string("This is a public API. No authentication required here..."));
     }
 
     @Test
