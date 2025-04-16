@@ -13,7 +13,7 @@ public class TestController {
 
     @GetMapping("/public")
     public ResponseEntity<String> publicEndpoint() {
-        return ResponseEntity.status(HttpStatus.OK).body("This is a public API. No authentication required here.");
+        return ResponseEntity.status(HttpStatus.OK).body("This is a public API. No authentication required here...");
     }
 
     @GetMapping("/secure")
